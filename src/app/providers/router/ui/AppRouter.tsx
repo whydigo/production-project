@@ -1,4 +1,3 @@
-import React from 'react';
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { routeConfig } from 'shared/config/routeConfig/routeConfig';
@@ -13,7 +12,9 @@ const AppRouter = () => {
                         path={path}
                         element={(
                             <Suspense fallback={<div>Loading...</div>}>
-                                {element}
+                                <div className='page-wrapper'>
+                                    {element}
+                                </div>
                             </Suspense>
                         )}
                     />
